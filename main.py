@@ -11,6 +11,9 @@ from flask import Flask, request
 # Initial Flask app
 app = Flask(__name__)
 
+@app.route('/')
+def home():
+   return 'welcome'
 
 @app.route('/success/<name>')
 def success(name):

@@ -80,6 +80,6 @@ def getJobData():
 #    resp = asyncio.run(writer(lst))        
 #    return resp
 
-if __name__ == "__main__":
-    # Running server
-    app.run(debug=True)
+# if __name__ == "__main__":
+#     # Running server
+#     app.run(debug=True)

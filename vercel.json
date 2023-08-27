@@ -3,14 +3,6 @@
       {
         "command": "pip install -r requirements.txt",
         "use": "@vercel/python"
-      },	    
-       {
-        "command": "npx prisma generate",
-        "use": "@vercel/static-build"
-      },
-      {
-        "command": "npx prisma migrate deploy",
-        "use": "@vercel/static-build"
       }
     ]
   },

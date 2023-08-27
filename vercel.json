@@ -1,6 +1,6 @@
 {
 	    "builds": [{
-	        "src": "build.sh",
+	        "src": "main.py",
 	        "use": "@vercel/python",
 	        "config": { "maxLambdaSize": "15mb" }
 	    }],

@@ -10,14 +10,6 @@ from prisma.models import JobCount
 import datetime
 import subprocess
 
-generate_command = ["npx", "prisma", "generate"]
-subprocess.run(generate_command, check=True)
-
-
-migrate_command = ["npx", "prisma", "migrate", "deploy"]
-subprocess.run(migrate_command, check=True)
-
-
 # Load data from config.ini file
 # config = configparser.ConfigParser()
 # config.read('config.ini')

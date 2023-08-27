@@ -11,8 +11,7 @@
       {
         "command": "npx prisma migrate deploy",
         "use": "@vercel/static-build"
-      },
-      "flask run" 
+      }
     ]
   },
 	    "routes": [

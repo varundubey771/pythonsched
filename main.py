@@ -14,16 +14,16 @@ import datetime
 # config = configparser.ConfigParser()
 # config.read('config.ini')
 
-async def writer(data):
-    db = Prisma(auto_register=True)
-    await db.connect()
+# async def writer(data):
+#     db = Prisma(auto_register=True)
+#     await db.connect()
 
-    # write your queries here
-    resp = await JobCount.prisma().create_many(
-        data=data
-    )
-    await db.disconnect()
-    return resp
+#     # write your queries here
+#     resp = await JobCount.prisma().create_many(
+#         data=data
+#     )
+#     await db.disconnect()
+#     return resp
 
 def scrape_jobs(country,jobTitle):
     url = f"https://www.linkedin.com/jobs/search/?keywords={jobTitle}&location={country}"
@@ -65,20 +65,20 @@ def getJobData():
            lst.append({"country": country,"job_count":job_count,"job":job})
    return lst
 
-@app.route('/sendJobDataCron')
-def sendJobDataCron():
-   countries = ["Australia","India","United Kingdom","United States","Ireland"]
-   jobs = ["Python", "Java", "Data Scientist"]
-   lst=[]
-   current_datetime = datetime.datetime.now()
-   str_cur_dt= current_datetime.strftime("%Y-%m-%d %H:%M:%S")
-   parsed_datetime = datetime.datetime.strptime(str_cur_dt, "%Y-%m-%d %H:%M:%S")    
-   for country in countries:
-       for job in jobs:
-           job_count = int(scrape_jobs(country,job))
-           lst.append({"country": country, "count": job_count, "title": job, "timestamp": parsed_datetime})
-   resp = asyncio.run(writer(lst))        
-   return resp
+# @app.route('/sendJobDataCron')
+# def sendJobDataCron():
+#    countries = ["Australia","India","United Kingdom","United States","Ireland"]
+#    jobs = ["Python", "Java", "Data Scientist"]
+#    lst=[]
+#    current_datetime = datetime.datetime.now()
+#    str_cur_dt= current_datetime.strftime("%Y-%m-%d %H:%M:%S")
+#    parsed_datetime = datetime.datetime.strptime(str_cur_dt, "%Y-%m-%d %H:%M:%S")    
+#    for country in countries:
+#        for job in jobs:
+#            job_count = int(scrape_jobs(country,job))
+#            lst.append({"country": country, "count": job_count, "title": job, "timestamp": parsed_datetime})
+#    resp = asyncio.run(writer(lst))        
+#    return resp
 
 if __name__ == "__main__":
     # Running server

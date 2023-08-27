@@ -4,14 +4,6 @@
 	        "use": "@vercel/python",
 	        "config": { "maxLambdaSize": "15mb" }
 	    }],
-	"build": {
-  "commands": [
-    "npx prisma generate",
-    "npx prisma db push",
-    "pip install -r requirements.txt", 
-    "flask run" 
-  ]
-},
 	    "routes": [
 	        {
 	            "src": "/(.*)",

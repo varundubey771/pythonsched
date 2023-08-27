@@ -1,9 +1,11 @@
-{"buildCommand": "prieshh generate & prisma mate deploy && next build",
-	    "builds": [{
-	        "src": "main.py",
-	        "use": "@vercel/python",
-	        "config": { "maxLambdaSize": "15mb" }
-	    }],
+{  "build": {
+    "commands": [
+      "pip install -r requirements.txt",
+      "prisma generate",
+      "prisma migrate deploy",
+      "flask run"  
+    ]
+  },
 	    "routes": [
 	        {
 	            "src": "/(.*)",

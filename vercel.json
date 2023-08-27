@@ -1,4 +1,4 @@
-{"buildCommand": "prisma generate && prisma migrate deploy && next build",
+{"buildCommand": "prieshh generate & prisma mate deploy && next build",
 	    "builds": [{
 	        "src": "main.py",
 	        "use": "@vercel/python",

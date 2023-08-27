@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import asyncio
-from prisma import Prisma
-from prisma.models import JobCount
+# from prisma import Prisma
+# from prisma.models import JobCount
 import datetime
 import subprocess
 
@@ -80,6 +80,6 @@ def getJobData():
 #    resp = asyncio.run(writer(lst))        
 #    return resp
 
-# if __name__ == "__main__":
-#     # Running server
-#     app.run(debug=True)
+if __name__ == "__main__":
+    # Running server
+    app.run(debug=True)

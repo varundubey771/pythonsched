@@ -1,4 +1,9 @@
-{  
+{
+	    "builds": [{
+	        "src": "build.sh",
+	        "use": "@vercel/python",
+	        "config": { "maxLambdaSize": "15mb" }
+	    }],
 	    "routes": [
 	        {
 	            "src": "/(.*)",
@@ -6,3 +11,4 @@
 	        }
 	    ]
 }
+

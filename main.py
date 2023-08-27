@@ -5,8 +5,8 @@ import requests
 from bs4 import BeautifulSoup
 import re
 import asyncio
-# from prisma import Prisma
-# from prisma.models import JobCount
+from prisma import Prisma
+from prisma.models import JobCount
 import datetime
 
 
